@@ -1,0 +1,184 @@
+// // Online Go compiler to run Golang program online
+// // Print "Hello World!" message
+
+// package main
+// import (
+//     "fmt"
+//     "math"
+// )
+
+// type Vertex struct {
+//     x,y float64
+// }
+// func (v Vertex) Abs() float64{
+//     return math.Sqrt(v.x*v.x + v.y*v.y );
+// }
+// func (v2 *Vertex) scale(f float64) {
+//     v2.x = v2.x*f;
+//     v2.y = v2.y*f;
+// }
+
+
+
+// type myFloat float64
+// func (f myFloat) Abs2() float64{
+//     return float64(f)
+// }
+
+// func main() {
+//     v:= Vertex{3,4}
+//     v.scale(11)
+//     fmt.Println(v.Abs())
+//     v1:= myFloat(98.09)
+//     fmt.Println(v1.Abs2())
+//   fmt.Println("Hello World!")
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// package main
+
+// import (
+//     "fmt"
+// )
+
+// type I interface{
+//     M()
+// }
+
+// type J struct{
+//     S string
+// }
+
+// func (j J) M(){
+//     fmt.Println(j.S)
+// }
+// func main(){
+//     var i I = J{"hello"}
+//     i.M()
+
+// }
+
+
+
+
+package main
+
+import (
+    "fmt"
+)
+
+
+type MotorVehicle interface{
+    Mileage() float64
+}
+
+type Audi struct {
+    distance float64
+    fuel float64
+    avg_speed string
+}
+
+type BMW struct {
+    distance float64
+    fuel float64
+}
+
+
+func (b BMW) Mileage() float64{
+    return b.distance/b.fuel
+}
+
+func(a Audi) Mileage() float64{
+    return a.distance/a.fuel
+}
+
+func (a Audi) averageSpeed()string{
+    return a.avg_speed
+}
+func TotalMileage(m MotorVehicle){
+    // tm:= 0.0
+    // for _,v:=range m{
+    //     fmt.Println(v.Mileage())
+    //     tm = tm+v.Mileage()
+    // }
+    // fmt.Println("total Mileage", tm)
+    
+    au:=m.(Audi)
+    fmt.Println(au.averageSpeed())
+}
+
+
+func main(){
+    a1:= Audi{
+        distance:51.09,
+        fuel:90.09,
+        avg_speed:"7",
+    }
+    /*
+    b1:= BMW{
+        distance:90.00,
+        fuel:109.09,
+    }
+    **/
+    
+//    person := []MotorVehicle{b1,a1}
+    TotalMileage(a1)
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
